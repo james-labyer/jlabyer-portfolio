@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Cryptographic Primitives"
+    />
+    <title>Cryptographic Primitives</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <body>
+    <main id="main-doc">
+      <nav id="navbar">
+        <header>Cryptographic Primitives</header>
+        <div>
+          <a
+            class="nav-link"
+            href="#Overview"
+            >Overview</a
+          >
+        </div>
+        <div>
+          <a
+            class="nav-link"
+            href="#Rationale"
+            >Rationale</a
+          >
+        </div>
+        <div>
+          <a
+            class="nav-link"
+            href="#Combining_Cryptographic_Primitives"
+            >Combining Cryptographic Primitives</a
+          >
+        </div>
+        <div>
+          <a
+            class="nav-link"
+            href="#Commonly_Used_Primitives"
+            >Commonly Used Primitives</a
+          >
+        </div>
+        <div>
+          <a
+            class="nav-link"
+            href="#Using_Cryptographic_Primitives_on_the_Web"
+            >Using Cryptographic Primitives on the Web</a
+          >
+        </div>
+        <div>
+          <a
+            class="nav-link"
+            href="#Commonly_Used_Web_Crypto_API_Interfaces"
+            >Commonly Used Web Crypto API Interfaces</a
+          >
+        </div>
+      </nav>
+      <div class="doc-content">
+        <section
+          class="main-section"
+          id="Overview"
+        >
+          <header>Overview</header>
+          <p>
+            Cryptographic Primitives are low-level algorithms that are used as
+            the building blocks of cryptographic protocols for computer systems.
+            The content on this page is sourced from
+            <a href="https://en.wikipedia.org/wiki/Cryptographic_primitive"
+              >Wikipedia</a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto"
+              >MDN</a
+            >.
+          </p>
+        </section>
+        <section
+          class="main-section"
+          id="Rationale"
+        >
+          <header>Rationale</header>
+          <p>Cryptographic primitives are designed to do one task reliably.</p>
+          <p>
+            In order to be deemed trustworthy, cryptographic primitives are
+            subjected to intense scrutiny from the cryptography community.
+            Developing a new cryptographic primitive requires a lot of time,
+            expertise, and collaboration. As a result, new cryptographic
+            primitives are not developed for specific cryptosystems. Instead,
+            the best cryptographic primitives are used by many cryptosystems.
+          </p>
+          <p>
+            Any weakness that is discovered in a cryptographic primitive will
+            affect all of the cryptosystems that rely on it. This is why
+            cryptographic primitives are subjected to so much scrutiny.
+          </p>
+        </section>
+        <section
+          class="main-section"
+          id="Combining_Cryptographic_Primitives"
+        >
+          <header>Combining Cryptographic Primitives</header>
+          <p>
+            Because each cryptographic primitive is designed for a specific
+            purpose, one cryptographic primitive is usually not enough to
+            provide all of the security features required for a system. In order
+            to provide the desired security features, multiple cryptographic
+            primitives are usually combined together in one carefully designed
+            system.
+          </p>
+          <p>
+            For example, one cryptographic primitive might be used to encrypt a
+            message, while another might be needed to verify the authenticity of
+            the message.
+          </p>
+        </section>
+        <section
+          class="main-section"
+          id="Commonly_Used_Primitives"
+        >
+          <header>Commonly Used Primitives</header>
+          <p>Common types of primitives include:</p>
+          <ul>
+            <li>One-way hash functions</li>
+            <li>Symmetric key cryptography</li>
+            <li>Public-key cryptography</li>
+            <li>Digital signature</li>
+            <li>Mix network</li>
+            <li>Private information retrieval</li>
+            <li>Commitment scheme</li>
+            <li>Cryptographically secure pseudorandom number generator</li>
+          </ul>
+        </section>
+        <section
+          class="main-section"
+          id="Using_Cryptographic_Primitives_on_the_Web"
+        >
+          <header>Using Cryptographic Primitives on the Web</header>
+          <p>
+            Developers of websites and web applications can use the Web Crypto
+            API to access cryptographic primitives that are implemented by the
+            browser according to W3C specification for the Crypto interface.
+          </p>
+          <p>
+            The Web Crypto API is supported by the major desktop and mobile
+            browsers and by Node.js.
+          </p>
+          <p>
+            Developers should enlist the help of subject matter experts when
+            considering using cryptographic primitives. An incorrect
+            cryptosystem design can result in security flaws, and they are not
+            always easy to catch. An expert can help ensure that the system is
+            safe.
+          </p>
+        </section>
+        <section
+          class="main-section"
+          id="Commonly_Used_Web_Crypto_API_Interfaces"
+        >
+          <header>Commonly Used Web Crypto API Interfaces</header>
+          <p>
+            Here are some of the most commonly used interfaces in the Web Crypto
+            API. Please see the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto"
+              >MDN Web Crypto API documentation</a
+            >
+            for more information.
+          </p>
+          <p>Create a digital signature:</p>
+          <code
+            >let signature = await window.crypto.subtle.sign( algorithm, key,
+            data );</code
+          >
+          <p>Verify a digital signature:</p>
+          <code>
+            let result = await window.crypto.subtle.verify( algorithm, key,
+            signature, data );</code
+          >
+          <p>Encrypt data:</p>
+          <code
+            >let ciphertext = await window.crypto.subtle.encrypt(algorithm, key,
+            data);</code
+          >
+          <p>Decrypt data:</p>
+          <code
+            >let plaintext = await window.crypto.subtle.decrypt(algorithm, key,
+            data);</code
+          >
+          <p>Create a digest of some data:</p>
+          <code
+            >let digest = await window.crypto.subtle.digest(algorithm,
+            data);</code
+          >
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,267 @@
+/* fonts */
+.space-grotesk-default {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* define color palette */
+:root {
+  --heading-color: #fa573e;
+  --background-color: #fffcf5;
+  --table-stripe: #eae7e0;
+  --accent-color: #293039;
+}
+
+/* normalize margins */
+body {
+  margin: 0;
+  padding: 0;
+  border: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background-color);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  color: black;
+  text-wrap: wrap;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--background-color);
+  color: var(--accent-color);
+  font-size: 3rem;
+  padding: 1rem;
+}
+
+#navbar {
+  display: flex;
+  justify-content: right;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--background-color);
+  background-color: var(--accent-color);
+}
+
+header a {
+  padding: 0.75rem;
+}
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 9rem);
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+}
+
+#welcome-section h1 {
+  font-size: 8rem;
+  padding: 1.5rem;
+  color: var(--heading-color);
+}
+
+#welcome-section h2 {
+  font-size: 3rem;
+  color: black;
+}
+
+#welcome-section p {
+  font-size: 2rem;
+  padding: 1.5rem;
+  max-width: 70%;
+  /* text-align: center; */
+}
+
+#welcome-section table {
+  font-size: 1.5rem;
+  margin: 1.5rem;
+  border-collapse: collapse;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+}
+
+th,
+td {
+  padding: 0.5rem;
+}
+
+thead th {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+tbody tr td:nth-child(1),
+thead tr th:nth-child(1) {
+  text-align: left;
+}
+
+tbody tr td:nth-child(2),
+thead tr th:nth-child(2) {
+  text-align: right;
+}
+
+/* zebra striping */
+tbody tr:nth-child(odd) {
+  background-color: var(--table-stripe);
+}
+
+#projects {
+  border-top: 2px dotted black;
+  padding: 3rem 0 3rem 0;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+#projects h1 {
+  text-align: center;
+  font-size: 5rem;
+  color: var(--heading-color);
+}
+
+#projects p {
+  font-size: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.project-tile {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+  padding: 0;
+}
+
+.project-tile * {
+  margin: 0;
+}
+
+.project-tile img {
+  width: 300px;
+  height: auto;
+}
+
+.project-tile a {
+  margin: 0;
+}
+
+.project-tile a p::before {
+  content: "<\00a0";
+  color: var(--accent-color);
+  transition: color 0.1s ease;
+}
+
+.project-tile a:hover p::before {
+  content: "<\00a0";
+  color: var(--background-color);
+}
+
+.project-tile a p::after {
+  content: "\00a0/>";
+  color: var(--accent-color);
+  transition: color 0.1s ease;
+}
+
+.project-tile a:hover p::after {
+  content: "\00a0/>";
+  color: var(--background-color);
+}
+
+.project-title {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  font-size: 2rem;
+  text-align: center;
+  margin: -3px 0 0 0;
+  border: 0;
+  padding: 1em 0.4em 1em 0.4em;
+}
+
+#contact,
+footer {
+  color: var(--accent-color);
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#contact h1 {
+  font-size: 5rem;
+  padding: 4rem 2rem 2rem 2rem;
+  color: var(--heading-color);
+}
+
+#contact a {
+  font-size: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.icon {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.15em;
+}
+
+footer {
+  display: flex;
+  justify-content: right;
+  font-size: 2rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  border-top: 2px dotted black;
+}
+
+.copyright {
+  flex: 1 auto;
+  text-align: right;
+}
+
+/* 445px: top nav links right-align */
+/* 712px: single column for portfolio projects */
+
+@media only screen and (max-width: 500px) {
+  #navbar {
+    justify-content: center !important;
+    /*text-align: center;*/
+  }
+}

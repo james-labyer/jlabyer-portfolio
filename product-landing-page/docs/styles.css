@@ -2,6 +2,7 @@ html {
   box-sizing: border-box;
   font-family: "Open Sans", Arial, sans-serif;
   line-height: 1.5;
+  background-color: #bfd5d9;
 }
 
 #navbar {
@@ -13,7 +14,7 @@ html {
   border-right: solid grey 2px;
   overflow-y: auto;
   overflow-x: hidden;
-  background: white;
+  background-color: #bfd5d9;
 }
 
 #navbar div {
@@ -63,7 +64,11 @@ header {
   display: block;
   border-radius: 5px;
   padding: 5px;
-  background-color: #d3d3d3;
+  background-color: #a9bfc2;
+}
+
+#Section_D {
+  padding-bottom: 1rem;
 }
 
 @media (max-width: 450px) {

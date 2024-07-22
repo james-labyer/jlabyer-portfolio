@@ -60,7 +60,6 @@ header h1 {
   font: inherit;
   color: #fa573e;
   font-weight: bold;
-  /* width: 50%; */
 }
 
 #navbar {
@@ -97,7 +96,6 @@ header a {
   align-items: center;
   text-align: center;
   margin: 0;
-  /* padding: 2rem; */
 }
 
 #name-section h1 {
@@ -119,7 +117,6 @@ header a {
 #welcome-section p {
   font-size: 2rem;
   padding: 1.5rem;
-  /* max-width: 90%; */
 }
 
 #welcome-section table {
@@ -164,6 +161,7 @@ tbody tr:nth-child(odd) {
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
   gap: 2rem;
 }
 

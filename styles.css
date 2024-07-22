@@ -167,12 +167,6 @@ tbody tr:nth-child(odd) {
   gap: 2rem;
 }
 
-/* #projects h1 {
-  text-align: center;
-  font-size: 5rem;
-  color: var(--heading-color);
-} */
-
 #projects p {
   font-size: 2rem;
   padding: 1.5rem;
@@ -182,42 +176,52 @@ tbody tr:nth-child(odd) {
 .project-tile {
   flex: 1 1 auto;
   display: flex;
+  flex-direction: column;
+  align-content: center;
   justify-content: center;
   margin: 3rem;
   padding: 0;
+  width: 310px;
 }
 
 .project-tile * {
   margin: 0;
 }
 
-.project-tile img {
-  width: 300px;
-  height: auto;
-}
-
 .project-tile a {
   margin: 0;
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  font-weight: bold;
 }
 
-.project-tile a p::before {
+.project-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.demo-link {
+  margin-left: auto;
+}
+
+.project-tile a::before {
   content: "<\00a0";
   color: var(--accent-color);
   transition: color 0.1s ease;
 }
 
-.project-tile a:hover p::before {
+.project-tile a:hover::before {
   content: "<\00a0";
   color: var(--background-color);
 }
 
-.project-tile a p::after {
+.project-tile a::after {
   content: "\00a0/>";
   color: var(--accent-color);
   transition: color 0.1s ease;
 }
 
-.project-tile a:hover p::after {
+.project-tile a:hover::after {
   content: "\00a0/>";
   color: var(--background-color);
 }
@@ -229,7 +233,15 @@ tbody tr:nth-child(odd) {
   text-align: center;
   margin: -3px 0 0 0;
   border: 0;
-  padding: 1em 0.4em 1em 0.4em;
+  padding: 1em 0.75em 2em 0.75em;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-title h3 {
+  font-size: 2.2rem;
 }
 
 #contact,
@@ -253,9 +265,7 @@ footer {
 }
 
 #contact h1 {
-  /* font-size: 5rem; */
   padding: 4rem 2rem 2rem 2rem;
-  /* color: var(--heading-color); */
 }
 
 #contact a {
@@ -296,5 +306,13 @@ footer {
   #navbar {
     justify-content: center;
     margin-left: 0;
+  }
+}
+
+/* when the grid is 1 column wide, the titles do not need to have matching height */
+
+@media only screen and (max-width: 620px) {
+  .project-title {
+    height: auto;
   }
 }

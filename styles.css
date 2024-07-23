@@ -117,6 +117,7 @@ header a {
 #welcome-section p {
   font-size: 2rem;
   padding: 1.5rem;
+  max-width: 1000px;
 }
 
 #welcome-section table {
